@@ -21,7 +21,7 @@
       </a-entity>
 
       <a-entity id="cameraRig" position="0 0 3">
-        <a-entity camera wasd-controls="acceleration: 10" look-controls position="0 1.2 0"></a-entity>
+        <a-entity camera wasd-controls="acceleration: 10" look-controls="reverseMouseDrag: true" position="0 1.2 0"></a-entity>
         <a-entity id="right-hand"
                   teleport-controls="collisionEntities: #floor; cameraRig: #cameraRig; button: trigger"
                   oculus-touch-controls="hand: right">
