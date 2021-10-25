@@ -7,16 +7,17 @@
   <body>
     <a-scene>
       <a-sky src="lilienstein_8k.jpg"></a-sky>
-      <a-box position="2 2 0" color="#333399"></a-box>
+      <a-box position="2 2 0" color="#333399" shadow="cast: true"></a-box>
 
-      <a-entity position="0 0 0" gltf-model="url(monkey.glb)"></a-entity>
-      <a-entity position="1 1 .5" light="type: directional; intensity: 3.0; color: white"></a-entity>
+      <a-entity position="0 0 0" gltf-model="url(monkey.glb)" shadow="cast: true"></a-entity>
+      <a-entity position="1 5 .5" light="type: directional; intensity: 3.0; color: white; castShadow: true"></a-entity>
       <a-entity light="type: ambient"></a-entity>
 
       <a-entity id="floor"
         geometry="primitive: box; width: 10; height: 1; depth: 10"
         position="0 0 0"
-        material="color: #111">
+        material="color: #111"
+        shadow="receive: true">
       </a-entity>
 
       <a-entity id="cameraRig" position="0 0 3">
