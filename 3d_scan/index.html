@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-teleport-controls/dist/aframe-teleport-controls.min.js"></script>
+<!--    <script src="https://unpkg.com/aframe-input-mapping-component/dist/aframe-input-mapping-component.min.js"></script>
+-->  </head>
+  <body>
+    <a-scene renderer="colorManagement: true; highRefreshRate: true">
+    <a-sky color="#FFF"></a-sky>
+      <a-entity position="0 0 -0.5" gltf-model="url(scaniverse-20221230-144303.glb); shadow: flat"></a-entity>
+
+      <a-entity id="floor"
+        geometry="primitive: box; width: 10; height: 1; depth: 10"
+        position="0 -0.55 0"
+        material="color: #333">
+      </a-entity>
+
+      <a-entity id="cameraRig">
+        <a-entity camera wasd-controls="acceleration: 10" look-controls position="0 1.2 0"></a-entity>
+        <a-entity id="right-hand"
+                  teleport-controls="collisionEntities: #floor; cameraRig: #cameraRig; button: trigger"
+                  oculus-touch-controls="hand: right">
+        </a-entity>
+        <a-entity id="left-hand"
+                  oculus-touch-controls="hand: left">
+        </a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
